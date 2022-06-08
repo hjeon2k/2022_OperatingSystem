@@ -22,7 +22,7 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 	int32u_t flag = eos_disable_interrupt();
   eos_tcb_t *task = eos_get_current_task(); 
   
- while(1){
+ //while(1){
 	  if (sem->count > 0){
       sem->count --;
       //PRINT("Sem ACK, count : %d\n", sem->count);
@@ -37,15 +37,26 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 		  }
 
 		  else if (timeout == 0){
-        //_os_node_t new_semb;
-        //new_semb.ptr_data = task;
-        //new_semb.priority = task->schb->priority;
-        if (task->schb->priority == 50) return 0;
-
+        if (sem->wait_queue != NULL) return 0; // change
         if (sem->queue_type == FIFO) _os_add_node_tail(&(sem->wait_queue), &task->semb);
 				else _os_add_node_priority(&(sem->wait_queue), task->semb);
+        PRINT("Add to Q\n");
+
         eos_restore_interrupt(flag);
-        eos_sleep(0);
+        /*eos_sleep(0);
+        
+        if (sem->wait_queue != NULL) _os_remove_node(&(sem->wait_queue), task->semb);
+        flag = eos_disable_interrupt();
+        if (sem->count > 0){
+          sem->count --;
+          //PRINT("Sem ACK, count : %d\n", sem->count);
+          eos_restore_interrupt(flag);
+		      return 1;
+	      }
+        else{
+          eos_restore_interrupt(flag);
+          return 0;
+        }*/
       }
 
 		  else { // timeout > 0
@@ -57,7 +68,7 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 		  	eos_acquire_semaphore(sem, -1);
 		  }
 	  }
-  }
+  //}
 }
 
 void eos_release_semaphore(eos_semaphore_t *sem) {
@@ -69,9 +80,9 @@ void eos_release_semaphore(eos_semaphore_t *sem) {
 		eos_alarm_t* alarm = task->alarm;
     
 		_os_remove_node(&(sem->wait_queue), task->semb);
-    
-    if (task->schb->priority == 50) sender_wakeup_flag = 1;
-      alarm->handler(task);
+    PRINT("Remove from Q\n");
+    if (task->schb->priority == 50 && sender_wakeup_flag == 0) sender_wakeup_flag = 1;
+    alarm->handler(task);
 	}
   //PRINT("Sem Realse now, count :  %d\n", sem->count);
   eos_restore_interrupt(flag);

@@ -75,12 +75,8 @@ void eos_schedule() {
 		_os_current_task->state = RUNNING;
 		
 		//PRINT("Next Task P : %d\n", _os_current_task->schb->priority);
-		if (_os_current_task->schb->priority == 50){
-      if (sender_wakeup_flag == 1){sender_wakeup_flag = 0;}
-      else if (sender_inq_flag == 1) {sender_inq_flag = 0;}
-      else _os_remove_node(&_os_ready_queue[sch_priority], sch_schb);
-    }
-    else _os_remove_node(&_os_ready_queue[sch_priority], sch_schb);
+		/*if (_os_current_task->schb->priority == 50 && sender_wakeup_flag == 1) sender_wakeup_flag = 0;
+    else*/ _os_remove_node(&_os_ready_queue[sch_priority], sch_schb);
 		
     if (!_os_ready_queue[sch_priority]) _os_unset_ready(sch_priority); // get schb rid of the ready queue
 		_os_restore_context(_os_current_task->sp);
