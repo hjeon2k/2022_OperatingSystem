@@ -37,30 +37,21 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 		  }
 
 		  else if (timeout == 0){
-        if (sem->wait_queue != NULL){ return 0;
-          //if (sem->wait_queue->ptr_data != NULL){
-          //  if (sem->wait_queue->ptr_data == task) return 0;
-          //}
+        if (sem->wait_queue != NULL){
+          if (sem->wait_queue->ptr_data != NULL){
+            if (sem->wait_queue->ptr_data == task && task->schb->priority == 50) return 0;
+          }
         }
         if (sem->queue_type == FIFO) _os_add_node_tail(&(sem->wait_queue), task->semb);
 				else _os_add_node_priority(&(sem->wait_queue), task->semb);
         //PRINT("Add to Q\n");
 
         eos_restore_interrupt(flag);
-        /*eos_sleep(0);
-        
-        if (sem->wait_queue != NULL) _os_remove_node(&(sem->wait_queue), task->semb);
-        flag = eos_disable_interrupt();
-        if (sem->count > 0){
-          sem->count --;
-          //PRINT("Sem ACK, count : %d\n", sem->count);
-          eos_restore_interrupt(flag);
-		      return 1;
-	      }
-        else{
-          eos_restore_interrupt(flag);
-          return 0;
-        }*/
+        if (task->schb->priority != 50){
+          eos_sleep(0);
+          eos_acquire_semaphore(sem, 0);
+        }
+        else return 0;
       }
 
 		  else { // timeout > 0

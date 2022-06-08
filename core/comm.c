@@ -26,8 +26,9 @@ int8u_t eos_send_message(eos_mqueue_t *mq, void *message, int32s_t timeout) {
 		char *c_message = (char *)message; // message is 1B char
 		for (int k=0; k<mq->msg_size; k++){
       *(char *)(mq->rear) = *(c_message + k);
-      //mq->rear ++;
-			if (mq->rear < mq->queue_start + (mq->msg_size)*(mq->queue_size)){mq->rear++;}
+      //PRINT("rear : 0x%x\n", mq->rear);
+      mq->rear ++;
+			if (mq->rear < mq->queue_start + (mq->msg_size)*(mq->queue_size)){}
 			else mq->rear = mq->queue_start;
 		}
 		eos_release_semaphore(&(mq->getsem));
@@ -37,11 +38,13 @@ int8u_t eos_send_message(eos_mqueue_t *mq, void *message, int32s_t timeout) {
 int8u_t eos_receive_message(eos_mqueue_t *mq, void *message, int32s_t timeout) {
 	if (eos_acquire_semaphore(&(mq->getsem), timeout) == 0) return 0;
 	else {
+    //PRINT("Good recv\n");
 		char *c_message = (char *)message;
 		for (int k=0; k<mq->msg_size; k++){
       *(c_message + k) = *(char *)(mq->front);
-      //mq->front ++;
-			if (mq->front < mq->queue_start + (mq->msg_size)*(mq->queue_size)){mq->front ++;}
+      //PRINT("front : 0x%x\n", mq->front);
+      mq->front ++;
+			if (mq->front < mq->queue_start + (mq->msg_size)*(mq->queue_size)){}
 			else mq->front = mq->queue_start;
     }
 		eos_release_semaphore(&(mq->putsem));

@@ -7,15 +7,11 @@
 [         main.c:            _os_initialization] creating idle task.
 [         main.c:            _os_initialization] finishing initialization. starting multitasking.
 [         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: 
 [         work.c:                receiver_task2] receive message from mq2
-[         work.c:                receiver_task2] received message: 
 [         work.c:                   sender_task] send message to mq1
 [         work.c:                   sender_task] send message to mq2
-[         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: 
-[         work.c:                receiver_task2] receive message from mq2
-[         work.c:                receiver_task2] received message: 
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] received message: xy
 [        timer.c:           eos_trigger_counter] tick 0
 [        timer.c:           eos_trigger_counter] tick 1
 [         work.c:                   sender_task] send message to mq1
@@ -23,7 +19,7 @@
 [        timer.c:           eos_trigger_counter] tick 2
 [        timer.c:           eos_trigger_counter] tick 3
 [         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: 
+[         work.c:                receiver_task1] received message: xy
 [         work.c:                   sender_task] send message to mq1
 [         work.c:                   sender_task] send message to mq2
 [        timer.c:           eos_trigger_counter] tick 4
@@ -125,62 +121,4 @@
 [        timer.c:           eos_trigger_counter] tick 38
 [        timer.c:           eos_trigger_counter] tick 39
 [         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: xy
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 40
-[        timer.c:           eos_trigger_counter] tick 41
-[         work.c:                receiver_task2] receive message from mq2
-[         work.c:                receiver_task2] received message: xy
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 42
-[        timer.c:           eos_trigger_counter] tick 43
-[         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: xy
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 44
-[        timer.c:           eos_trigger_counter] tick 45
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 46
-[        timer.c:           eos_trigger_counter] tick 47
-[         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: xy
-[         work.c:                receiver_task2] receive message from mq2
-[         work.c:                receiver_task2] received message: xy
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 48
-[        timer.c:           eos_trigger_counter] tick 49
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 50
-[        timer.c:           eos_trigger_counter] tick 51
-[         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: xy
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 52
-[        timer.c:           eos_trigger_counter] tick 53
-[         work.c:                receiver_task2] receive message from mq2
-[         work.c:                receiver_task2] received message: xy
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 54
-[        timer.c:           eos_trigger_counter] tick 55
-[         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: xy
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 56
-[        timer.c:           eos_trigger_counter] tick 57
-[         work.c:                   sender_task] send message to mq1
-[         work.c:                   sender_task] send message to mq2
-[        timer.c:           eos_trigger_counter] tick 58
-[        timer.c:           eos_trigger_counter] tick 59
-[         work.c:                receiver_task1] receive message from mq1
-[         work.c:                receiver_task1] received message: xy
-[         work.c:                receiver_task2] receive message from mq2
-[         work.c:     
+[         work.c:   
