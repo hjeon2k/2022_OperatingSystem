@@ -26,7 +26,8 @@ int8u_t eos_send_message(eos_mqueue_t *mq, void *message, int32s_t timeout) {
 		char *c_message = (char *)message; // message is 1B char
 		for (int k=0; k<mq->msg_size; k++){
       *(char *)(mq->rear) = *(c_message + k);
-			if (mq->rear < mq->queue_start + (mq->msg_size)*(mq->queue_size)) mq->rear ++;
+      //mq->rear ++;
+			if (mq->rear < mq->queue_start + (mq->msg_size)*(mq->queue_size)){mq->rear++;}
 			else mq->rear = mq->queue_start;
 		}
 		eos_release_semaphore(&(mq->getsem));
@@ -39,7 +40,8 @@ int8u_t eos_receive_message(eos_mqueue_t *mq, void *message, int32s_t timeout) {
 		char *c_message = (char *)message;
 		for (int k=0; k<mq->msg_size; k++){
       *(c_message + k) = *(char *)(mq->front);
-			if (mq->front < mq->queue_start + (mq->msg_size)*(mq->queue_size)) mq->front ++;
+      //mq->front ++;
+			if (mq->front < mq->queue_start + (mq->msg_size)*(mq->queue_size)){mq->front ++;}
 			else mq->front = mq->queue_start;
     }
 		eos_release_semaphore(&(mq->putsem));
