@@ -18,10 +18,6 @@
 #define FIFO 0
 #define PRIORITY 1
 
-_os_node_t *_os_ready_queue[LOWEST_PRIORITY + 1];
-int32u_t sender_inq_flag;
-int32u_t sender_wakeup_flag;
-
 /********************************************************
  * Debugging Module
  ********************************************************/

@@ -20,6 +20,7 @@
  * Pointer to TCB of running task
  */
 static eos_tcb_t *_os_current_task;
+static _os_node_t *_os_ready_queue[LOWEST_PRIORITY + 1];
 
 int32u_t eos_create_task(eos_tcb_t *task, addr_t sblock_start, size_t sblock_size, void (*entry)(void *arg), void *arg, int32u_t priority) {
 	//PRINT("task: 0x%x, priority: %d\n", (int32u_t)task, priority);
@@ -75,8 +76,7 @@ void eos_schedule() {
 		_os_current_task->state = RUNNING;
 		
 		//PRINT("Next Task P : %d\n", _os_current_task->schb->priority);
-		/*if (_os_current_task->schb->priority == 50 && sender_wakeup_flag == 1) sender_wakeup_flag = 0;
-    else*/ _os_remove_node(&_os_ready_queue[sch_priority], sch_schb);
+		_os_remove_node(&_os_ready_queue[sch_priority], sch_schb);
 		
     if (!_os_ready_queue[sch_priority]) _os_unset_ready(sch_priority); // get schb rid of the ready queue
 		_os_restore_context(_os_current_task->sp);

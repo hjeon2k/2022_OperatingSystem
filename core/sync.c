@@ -77,7 +77,6 @@ void eos_release_semaphore(eos_semaphore_t *sem) {
     
 		_os_remove_node(&(sem->wait_queue), task->semb);
     //PRINT("Remove from Q\n");
-    //if (task->schb->priority == 50 && sender_wakeup_flag == 0) sender_wakeup_flag = 1;
     alarm->handler(task);
     }
 	}
