@@ -22,7 +22,6 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 	int32u_t flag = eos_disable_interrupt();
   eos_tcb_t *task = eos_get_current_task(); 
   
- //while(1){
 	  if (sem->count > 0){
       sem->count --;
       //PRINT("Sem ACK, count : %d\n", sem->count);
@@ -39,7 +38,10 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 		  else if (timeout == 0){
         if (sem->wait_queue != NULL){
           if (sem->wait_queue->ptr_data != NULL){
-            if (sem->wait_queue->ptr_data == task && task->schb->priority == 50) return 0;
+            if (sem->wait_queue->ptr_data == task && task->schb->priority == 50) {
+              //PRINT("Already at Q\n"); 
+              return 0;
+              }
           }
         }
         if (sem->queue_type == FIFO) _os_add_node_tail(&(sem->wait_queue), task->semb);
@@ -63,7 +65,6 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 		  	eos_acquire_semaphore(sem, -1);
 		  }
 	  }
-  //}
 }
 
 void eos_release_semaphore(eos_semaphore_t *sem) {
