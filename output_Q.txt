@@ -1,0 +1,316 @@
+[       vector.c:                          main] reset
+[         init.c:                  _os_init_hal] initializing hal module.
+[    interrupt.c:            _os_init_icb_table] initializing interrupt module.
+[    scheduler.c:            _os_init_scheduler] initializing scheduler module.
+[         task.c:                 _os_init_task] initializing task module.
+[    interrupt.c:     eos_set_interrupt_handler] irqnum: 0, handler: 0x804910b, arg: 0x0
+[         main.c:            _os_initialization] creating idle task.
+[         main.c:            _os_initialization] finishing initialization. starting multitasking.
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] received message: xy
+[        timer.c:           eos_trigger_counter] tick 0
+[        timer.c:           eos_trigger_counter] tick 1
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 2
+[        timer.c:           eos_trigger_counter] tick 3
+[         work.c:                receiver_task1] receive message from mq1
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 4
+[        timer.c:           eos_trigger_counter] tick 5
+[         work.c:                receiver_task2] receive message from mq2
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 6
+[        timer.c:           eos_trigger_counter] tick 7
+[         work.c:                receiver_task1] receive message from mq1
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 8
+[        timer.c:           eos_trigger_counter] tick 9
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 10
+[        timer.c:           eos_trigger_counter] tick 11
+[         work.c:                receiver_task1] receive message from mq1
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] receive message from mq2
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 12
+[        timer.c:           eos_trigger_counter] tick 13
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 14
+[        timer.c:           eos_trigger_counter] tick 15
+[         work.c:                receiver_task1] receive message from mq1
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[        timer.c:           eos_trigger_counter] tick 16
+[        timer.c:           eos_trigger_counter] tick 17
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 18
+[        timer.c:           eos_trigger_counter] tick 19
+[         work.c:                receiver_task1] receive message from mq1
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[        timer.c:           eos_trigger_counter] tick 20
+[        timer.c:           eos_trigger_counter] tick 21
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 22
+[        timer.c:           eos_trigger_counter] tick 23
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 24
+[        timer.c:           eos_trigger_counter] tick 25
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 26
+[        timer.c:           eos_trigger_counter] tick 27
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 28
+[        timer.c:           eos_trigger_counter] tick 29
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 30
+[        timer.c:           eos_trigger_counter] tick 31
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 32
+[        timer.c:           eos_trigger_counter] tick 33
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 34
+[        timer.c:           eos_trigger_counter] tick 35
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 36
+[        timer.c:           eos_trigger_counter] tick 37
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 38
+[        timer.c:           eos_trigger_counter] tick 39
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 40
+[        timer.c:           eos_trigger_counter] tick 41
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 42
+[        timer.c:           eos_trigger_counter] tick 43
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 44
+[        timer.c:           eos_trigger_counter] tick 45
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 46
+[        timer.c:           eos_trigger_counter] tick 47
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 48
+[        timer.c:           eos_trigger_counter] tick 49
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 50
+[        timer.c:           eos_trigger_counter] tick 51
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 52
+[        timer.c:           eos_trigger_counter] tick 53
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 54
+[        timer.c:           eos_trigger_counter] tick 55
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 56
+[        timer.c:           eos_trigger_counter] tick 57
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 58
+[        timer.c:           eos_trigger_counter] tick 59
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 60
+[        timer.c:           eos_trigger_counter] tick 61
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 62
+[        timer.c:           eos_trigger_counter] tick 63
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 64
+[        timer.c:           eos_trigger_counter] tick 65
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 66
+[        timer.c:           eos_trigger_counter] tick 67
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 68
+[        timer.c:           eos_trigger_counter] tick 69
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 70
+[        timer.c:           eos_trigger_counter] tick 71
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 72
+[        timer.c:           eos_trigger_counter] tick 73
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 74
+[        timer.c:           eos_trigger_counter] tick 75
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 76
+[        timer.c:           eos_trigger_counter] tick 77
+[         work.c:                receiver_task2] receive message from mq2
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task2] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[        timer.c:           eos_trigger_counter] tick 78
+[        timer.c:           eos_trigger_counter] tick 79
+[         work.c:                receiver_task1] receive message from mq1
+[         sync.c:         eos_release_semaphore] Remove from Q
+[         work.c:                receiver_task1] received message: xy
+[         work.c:                   sender_task] send message to mq1
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 80
+[        timer.c:           eos_trigger_counter] tick 81
+[         work.c:                   sender_task] send message to mq1
+[         sync.c:         eos_acquire_semaphore] Add to Q
+[         work.c:                   sender_task] send message to mq2
+[         sync.c:         eos_acquire_semaphore] Already at Q
+[        timer.c:           eos_trigger_counter] tick 82
+[        timer.c:           eos_trigger_counter] tick 83
+[         work.c:   
